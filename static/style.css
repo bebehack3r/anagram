@@ -1,0 +1,80 @@
+*, html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
+#homebutt {
+    position: fixed;
+    height: 100%;
+    width: 8%;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    transition: background-color 0.1s ease-in;
+}
+#homebutt:hover{
+    background: rgba(0,0,0,0.4);
+}
+#homebutt p{
+    font-family: sans-serif;
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    bottom: 10px;
+    color: #FFFFFF;
+}
+#wrap {
+    width: 35%;
+    margin-left: 32.5%;
+}
+span#right {
+    display: block;
+    text-align: right;
+}
+img#logo {
+    width: 35%;
+    margin-left: 32.5%;
+}
+span#blue {
+    color: #2F7FCD;
+}
+#footercop {
+    position: fixed;
+    width: 100%;
+    bottom: 2px;
+    right: 5px;
+    text-align: right;
+    color: #DBDBDB;
+}
+#footercop a.blue {
+    color: #DBDBDB;
+    text-decoration: none; 
+}
+#footercop a.blue:hover {
+    color: #2F7FCD;
+}
+a.blue {
+    font-style: italic;
+    text-decoration: none;
+    color: #2F7FCD;
+}
+a.blue:hover {
+    font-style: italic;
+    color: #1C4C7B;
+}
+table#historytab {
+    width: 100%;
+    border: 1px solid black;
+}
+table#historytab tr {
+    width: 100%;
+    height: 60px;
+}
+table#historytab tr td {
+    text-align: center;
+    width: 33.3%;
+    height: 60px;
+    border: 1px solid black;
+}

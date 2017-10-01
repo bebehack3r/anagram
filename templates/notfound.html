@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <a href="/"><div id="homebutt"><p>HOME</p></div></a>
+        <div id="wrap">
+            <a href="/help"><img id="logo" src="../static/images/logo.png" alt="logo"></a>
+            <br><br>
+            <p>
+                channel <a class="blue" href="https://telegram.me/{{ channelname }}">@{{ channelname }}</a> not found! :(<br><br>
+                <span id="right">go to <a class="blue" href="/channels">/channels</a> and check if it exists.</span>
+            </p>
+        </div>
+        <div id="footercop">
+            <p>by <a class="blue" href="https://telegram.me/sashaledockol">@sashaledockol</a></p>
+        </div>
+    </body>
+</html>

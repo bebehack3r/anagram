@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <a href="/"><div id="homebutt"><p>HOME</p></div></a>
+        <div id="wrap">
+            <a href="/help"><img id="logo" src="../static/images/logo.png" alt="logo"></a>
+            <br><br>
+	    <form action='' method='POST'>
+		<style type="text/css">
+		    .tg{border-collapse:collapse;border-spacing:0;}
+		    .tg td{font-family:Arial, sans-serif;font-size:16px;padding:10px 5px;word-break:normal;}
+		    .tg th{font-family:Arial, sans-serif;font-size:16px;font-weight:normal;padding:10px 5px;word-break:normal;}
+		    .tg .tg-yw4l{vertical-align:top}
+		</style>
+		<table class="tg" style="width: 100%;">
+  		    <tr>
+    			<th class="tg-yw4l" colspan="12"><input style="width: 100%; height: 40px; font-size: 1.2em; padding-left: 3px;" id="grbtg" type="text" placeholder='Instagram accs to parse' name='grbinst'></th>
+		    </tr>
+		    <!-- <tr>
+			<th class="tg-yw4l" colspan="12"><input style="width: 100%; height: 40px; font-size: 1.2em; padding-left: 3px;" id="grbinst" type="text" placeholder='Instagram channels to parse' name='gtbinst'></th>
+		    </tr> -->
+		    <tr>
+    			<th class="tg-yw4l" colspan="12"><input style="width: 100%; height: 40px; font-size: 1.2em; padding-left: 3px;" id="snd" type="text" placeholder='Channel to drop' name='snd'></th>
+  		    </tr>
+  		    <tr>
+    			<td class="tg-yw4l" colspan="12"><input style="width: 100%; height: 40px; font-size: 1.2em; padding-left: 3px;" id="num" type="text" placeholder='Posts expected' name='num'></td>
+    			<!-- <td class="tg-yw4l" colspan="2"><input style="width: 100%; height: 40px; font-size: 1.2em; padding-left: 3px;" id="del" type="text" placeholder='Delay' name='del'></td>
+    			<td class="tg-yw4l" colspan="2"><input style="width: 100%; height: 40px; font-size: 1.2em; padding-left: 3px;" id="hst" type="text" placeholder='Posts age' name='hst'></td> -->
+  		    </tr>
+  		    <tr>
+    			<td class="tg-yw4l" colspan="12"><input style="width: 100%;" type='submit' value='GRUB' name='submit'></td>
+  		    </tr>
+		</table>
+            </form>
+        </div>
+        <div id="footercop">
+            <p>by <a class="blue" href="https://telegram.me/sashaledockol">@sashaledockol</a></p>
+        </div>
+    </body>
+</html>

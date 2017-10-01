@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="" href="{{ url_for('static', filename='style.css') }}">
+        <style>
+            #wrap {
+                width: 65%;
+                margin-left: 17.5%;
+            }
+    	    #chtable {
+        		width: 100%;
+        		border: 1px solid black;
+        		text-align: center;
+    	    }
+    	    #chtable tr {
+        		width: 100%;
+        		border: 1px solid black;
+    	    }
+    	    #chtable tr td {
+        		height: 100%;
+        		border: 1px solid black;
+        		width: 1%;
+    	    }
+    	    #chtable tr td#naming {
+        		height: 100%;
+    	    }
+    	    #blanktable {
+        		border-collapse: collapse;
+        		border-spacing: 0;
+        		width: 50%;
+        		margin-left: 25%;
+        		margin-bottom: 40px;
+        		text-align: center;
+    	    }
+    	    #blanktable .tg {
+        		height: 25px;
+        		word-break: normal;
+    	    }
+    	    #blanktable .tg input {
+        		width: 90%;
+        		height: 60px:
+    	    }
+        </style>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  	<script>
+ 	    $( function() {
+ 	        $( "#start_datepicker" ).datepicker();
+		$( "#end_datepicker" ).datepicker();
+	    } );
+	</script>
+    </head>
+    <body>
+        <a href="/"><div id="homebutt"><p>HOME</p></div></a>
+        <div id="wrap">
+            <a href="/help"><img style="width: 25%; margin-left: 37.5%" id="logo" src="../static/images/logo.png" alt="logo"></a>
+            <br><br>
+	    <form action='' method='POST'>
+	    	<table id='blanktable'>
+		    <tr>
+    			<th class="tg"><input id="start_datepicker" type="text" placeholder='Start date' name='startdate'></th>
+    			<th class="tg"><input id="end_datepicker" type="text" placeholder='End date' name='enddate'></th>
+  		    </tr>
+  		    <tr>
+    			<td class="tg" colspan="2"><input type='submit' value='search!' name='submit'></td>
+  		    </tr>
+		</table>
+	    </form>
+	    {% for channel in channels %}
+	    <table id='chtable'>
+		<tr>
+		    <td id="naming" rowspan="2" >
+			<div style="width: 100px; text-align: center;">
+			    <a class='blue' href='https://telegram.me/{{ channel.split(':')[0] }}'>@{{ channel.split(':')[0] }}</a>
+			</div>
+		    </td>
+		    {% set stats = channel.split(':')[1] %}
+		    {% for stat in stats.split(',') %}
+			{% set timestampp = stat.split('###')[1].split(' ')[0] + ' - ' + stat.split('###')[1].split(' ')[1].replace('.',':') %}
+			<td>{{ timestampp }}</td>
+		    {% endfor %}
+		    <td>RESULT</td>
+		</tr>
+		<tr>
+		    {% set stats = channel.split(':')[1] %}
+		    {% for stat in stats.split(',') %}
+			<td>{{ stat.split('###')[0] }}</td>
+		    {% endfor %}
+		    {% if stats.split(',')|length > 1 %}
+		        {% if stats.split(',')[-1].split('###')[0]|int - stats.split(',')[0].split('###')[0]|int < 0 %}
+		            <td style="text-align: center; color: red;">{{ stats.split(',')[-1].split('###')[0]|int - stats.split(',')[0].split('###')[0]|int }}</td>
+		        {% elif stats.split(',')[-1].split('###')[0]|int - stats.split(',')[0].split('###')[0]|int == 0 %}
+			    <td style="text-align: center; color: black;">{{ stats.split(',')[-1].split('###')[0]|int - stats.split(',')[0].split('###')[0]|int }}</td>
+		        {% else %}
+			     <td style="text-align: center; color: #00B838;">{{ stats.split(',')[-1].split('###')[0]|int - stats.split(',')[0].split('###')[0]|int }}</td>
+		        {% endif %}
+		    {% endif %}
+		</tr>
+		<tr></tr>
+	    </table>
+	    <br><br><br>
+            {% endfor %}
+        </div>
+        <div id="footercop">
+            <p>by <a class="blue" href="https://telegram.me/sashaledockol">@sashaledockol</a></p>
+        </div>
+    </body>
+</html>

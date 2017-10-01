@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <a href="/"><div id="homebutt"><p>HOME</p></div></a>
+        <div id="wrap">
+            <a href="/help"><img id="logo" src="static/images/logo.png" alt="logo"></a>
+            <br><br>
+            <p>
+                Greetings, stranger! If you want to use me look what I am able to do:<br><br>
+                /info/<span id='blue'>#channel_name</span> - to get information about one channel at this moment<br><br>
+                /add/<span id='blue'>#channel_name</span> - to add new channel to database so you can collect info and save it serverside<br><br>
+                /delete/<span id='blue'>#channel_name</span> - should one of channels be not neccessary anymore, type this and delete it fully with all statistic<br><br>
+                /channels - to see all the channels stored in database<br><br>
+                /update - to update information about channels stored in database (use it once a day)<br><br>
+                /history - here is the magic, you get all the info for all the channels from database
+            </p>
+        </div>
+        <div id="footercop">
+            <p>by <a class="blue" href="https://telegram.me/sashaledockol">@sashaledockol</a></p>
+        </div>
+    </body>
+</html>
